@@ -29,16 +29,16 @@ def main():
         if key_lst[pg.K_LEFT]:
             kk_img_rct.move_ip((-1,0))
         if key_lst[pg.K_RIGHT]:
-            kk_img_rct.move_ip((+1,0))
+            kk_img_rct.move_ip((+2,0))
 
         x = tmr%3200 
         screen.blit(bg_img, [-x, 0])#練習６
         screen.blit(bg_img2, [-x+1600, 0])#練習７-１
         screen.blit(bg_img, [-x+3200, 0])#練習７-２
         screen.blit(bg_img2, [-x+4800, 0])#練習７-２
-        screen.blit(kk_img, [300, 200])#練習４
+        #screen.blit(kk_img, [300, 200])#練習４
 
-        #screen.blit(kk_img,kk_img_rct)#練習８
+        screen.blit(kk_img,kk_img_rct)#練習８
         pg.display.update()
         tmr += 1        
         clock.tick(200)
