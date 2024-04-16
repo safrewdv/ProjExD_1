@@ -18,20 +18,27 @@ def main():
     kk_img = pg.transform.rotozoom(kk_img,10,1.0)#練習２
 
     tmr = 0
+    
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         key_lst = pg.key.get_pressed()
+        s = 0
+        f = 0
         if key_lst[pg.K_UP]:
-            kk_img_rct.move_ip((0,-1))
+            f = -1
+            
         if key_lst[pg.K_DOWN]:
-            kk_img_rct.move_ip((0,+1))
+            f = +1
+            
         if key_lst[pg.K_LEFT]:
-            kk_img_rct.move_ip((-1,0))
+            s = -1
+            
         if key_lst[pg.K_RIGHT]:
-            kk_img_rct.move_ip((+2,0))
+            s = +1
 
         x = tmr%3200 
+        kk_img_rct.move_ip((s,f))
         screen.blit(bg_img, [-x, 0])#練習６
         screen.blit(bg_img2, [-x+1600, 0])#練習７-１
         screen.blit(bg_img, [-x+3200, 0])#練習７-２
